@@ -1,0 +1,3 @@
+rootProject.name = "CommonToolbox"
+include ':app'
+include ':CommonToolboxAndroidLib'

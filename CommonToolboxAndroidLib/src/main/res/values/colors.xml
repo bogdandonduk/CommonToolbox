@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ripple_dark">#55303030</color>
+    <color name="ripple_light">#55fafafa</color>
+
+    <color name="ripple_dark_weak">#22303030</color>
+    <color name="ripple_light_weak">#22fafafa</color>
+</resources>
