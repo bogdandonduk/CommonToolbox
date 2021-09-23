@@ -215,7 +215,7 @@ object CommonToolbox {
         (InputMethodManager::class.java.getMethod("getInputMethodWindowVisibleHeight")
             .invoke(context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager) as Int) > 0
 
-    fun hideSystemUI(window: Window) {
+    fun launchStickyImmersiveMode(window: Window) {
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -224,7 +224,7 @@ object CommonToolbox {
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
     }
 
-    fun showSystemUI(window: Window) {
+    fun quitStickyImmersiveMode(window: Window) {
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
