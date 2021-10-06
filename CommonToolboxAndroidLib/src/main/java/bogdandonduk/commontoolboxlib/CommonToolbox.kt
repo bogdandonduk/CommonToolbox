@@ -10,6 +10,7 @@ import android.graphics.BlendModeColorFilter
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
+import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -242,6 +243,15 @@ object CommonToolbox {
                     delay(1300)
                 }
             }
+        }
+    }
+
+    inline fun performIfInternetConnected(context: Context, noInternetAction: () -> Unit = { }, action: () -> Unit) {
+        (context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).activeNetworkInfo?.run {
+            if(isConnected)
+                action()
+            else
+                noInternetAction()
         }
     }
 }
